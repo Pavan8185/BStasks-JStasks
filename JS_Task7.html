@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Train Animation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .train-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        #train {
+            position: absolute;
+            left: -100px; /* Initial position off the screen */
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            transition: left 2s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="train-container">
+        <img id="train" src="train.png" alt="Train">
+    </div>
+    <button onclick="startTrain()">Start</button>
+    <button onclick="stopTrain()">Stop</button>
+
+    <script>
+        let trainInterval;
+        const train = document.getElementById("train");
+
+        function startTrain() {
+            trainInterval = setInterval(moveTrain, 2000); // Move the train every 2 seconds
+        }
+
+        function stopTrain() {
+            clearInterval(trainInterval);
+        }
+
+        function moveTrain() {
+            const currentPosition = parseInt(train.style.left) || -100;
+            const newPosition = currentPosition + 100;
+
+            train.style.left = newPosition + "px";
+
+            // Reset train position when it moves out of the screen
+            if (newPosition > window.innerWidth) {
+                train.style.left = "-100px";
+            }
+        }
+    </script>
+</body>
+</html>

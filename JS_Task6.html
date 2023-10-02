@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #125688;
+        }
+        .input-box {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-btn {
+            width: 100%;
+            background-color: #125688;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .forgot-password {
+            color: #125688;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Instagram</div>
+        <div class="input-box">
+            <input type="text" id="username" placeholder="Username" required>
+        </div>
+        <div class="input-box">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
+        <button class="login-btn" onclick="login()">Login</button>
+        <div class="forgot-password" onclick="forgotPassword()">Forgot Password?</div>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            // Perform login authentication here (dummy logic for example)
+            if (username === 'exampleuser' && password === 'examplepassword') {
+                alert('Login successful!');
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+
+        function forgotPassword() {
+            alert('Forgot Password functionality is not implemented in this example.');
+        }
+    </script>
+</body>
+</html>

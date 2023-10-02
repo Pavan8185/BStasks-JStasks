@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Letters</title>
+</head>
+<body>
+    <h1>Sort Letters in Alphabetical Order</h1>
+
+    <script>
+        // Function to sort letters in a string alphabetically
+        function sortLetters(inputString) {
+            // Convert the string to an array of characters, sort it, and join it back into a string
+            const sortedString = inputString.split('').sort().join('');
+            return sortedString;
+        }
+
+        // Example input
+        const inputString = 'webmaster';
+
+        // Call the function and print the output
+        const sortedString = sortLetters(inputString);
+        console.log("Expected Output:", sortedString);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date and Time with GMT</title>
+</head>
+<body>
+    <h1>Current Date and Time with GMT</h1>
+    <button id="dateButton">Show Date</button>
+    <button id="timeButton">Show Time (GMT)</button>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("dateButton").addEventListener("click", showCurrentDate);
+        document.getElementById("timeButton").addEventListener("click", showCurrentTime);
+
+        function showCurrentDate() {
+            const currentDate = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = currentDate.toLocaleDateString(undefined, options);
+            document.getElementById('result').textContent = `Current Date: ${formattedDate}`;
+        }
+
+        function showCurrentTime() {
+            const currentTime = new Date();
+            const options = { timeZone: 'Etc/GMT' };
+            const formattedTime = currentTime.toLocaleTimeString(undefined, options);
+            document.getElementById('result').textContent = `Current Time (GMT): ${formattedTime}`;
+        }
+    </script>
+</body>
+</html>
